@@ -1,106 +1,93 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
 
-<head>
+    <style>
+a:link, a:visited {
+  background-color: brown;
+  color: white;
+  padding: 14px 25px;
+  text-decoration: none;
+}
 
-	<title>Whats My Name</title>
-
-	<style>
-		/*Write your CSS code here*/
-		div {
-			width: 100px;
-			height: 100px;
-			border: 3px solid blue;
-      font-size:100px;
-		}
-
-    .Jclass{
-      transition: width 2s, height 2s, transform 2s;
-      color:yellow;
-    }
-    .Jclass:hover{
-      background-color:pink;
-      height: 200px;
-      width:200px;
-      transform: rotate(360deg);
-    }
-
-    .Aclass{
-      transition: width 4s, background-color 2s;
-      color:pink;
-    }
-    .Aclass:hover{
-      background-color:#ff6347;
-      width:600px;
-    }
-    .Hclass{
-      transition: width 2s, height 2s, transform 2s;
-      color:#ffcc99;
-      transition: width 2s, height 2s, transform 2s;
-    }
-    .Hclass:hover{
-      background-color:#ffff66;
-      width:600px;
-       transform: rotate(180deg);
-    }
-    .AAclass{
-      transition: width 2s, height 2s, transform 2s;
-      color:#ff6347;
-    }
-    .AAclass:hover{
-      background-color:orange;
-      height: 200px;
-      width:200px;
-      transform: rotate(360deg);
-    }
-    .Yclass{
-      transition: width 2s,height 2s, transform 2s; background-color 2s;
-      color:orange;
-    }
-    .Yclass:hover{
-      background-color:#ff6347;
-      width:600px;
-      height: 200px;
-      transform: rotate(-360deg)
-    }
-    .Rclass{
-      transition: width 2s,
-      height: 2s; background-color 2s;
-      color:#663300;
-    }
-    .Rclass:hover{
-      background-color:#e67300;
-      width:600px;
-    }
-    .AAAclass{
-      transition: width 2s, height 2s, transform 2s;
-      color:#e67300;
-    }
-    .AAAclass:hover{
-      background-color:#663300;
-      height: 200px;
-      width:200px;
-      transform: rotate(360deg);
-    }
-
+a:hover, a:active {
+  background-color: cyan;
+}
 </style>
 
-</head>
+  </head>
+  <body>
+    <div id = "Top">
+    <h1> <center> Friends With Fur </center> </h1>
+<!--------------------------------------------------->
+<div class ="w3-content w3-display-container">
+   <img class="Slides" src="https://furryfriendsrockinrescue.org/wp-content/uploads/2019/10/Furry-Friends-Rockin-Rescue_final-logo_small.png"style="width:100%">
 
-<body>	
-<nav>
-<a href = "DigitalDesign.html">Digital Design Page</a>
-</nav>	
-<br><br>
-<p>Hover over each letter to see the transition effect:</p>
+   <img class="Slides" src="https://www.furryfriendsnetwork.com/wp-content/uploads/2018/05/color-logo-bluish.png" style="width:100%">
 
-	<div class = "Jclass">J</div>
-  <div class = "Aclass">A</div>
-  <div class = "Hclass">H</div>
-  <div class = "AAclass">A</div>
-  <div class = "Yclass">Y</div>
-  <div class = "Rclass">R</div>
-  <div class = "AAAclass">A</div>
+  <img class ="Slides" src="https://www.furryfriendsadoption.org/wp-content/themes/v19.3-furry-friends/images/FF_Covid19-Appeal-6X11_-01_2-min.jpg" style="width:100%">
+ 
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+ 
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+ 
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("Slides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+<!----------------------------------------------------->
+  
 
+    <p>Have you ever thought of adopting an animal? There are many animals in need of a home! They are so cute and friendly like some of these furry friends:</p>
+
+<li> <strong><a href="https://www.petfinder.com/dog-breeds/" target="_blank">Dogs</a><strong> </li>
+
+  <img class="dogs" src= "http://cdn.akc.org/content/article-body-image/bmd_cute_puppies.jpg" width="300" height="200">
+
+  <br>
+
+  <img class="dogs" src= "https://cdn.shopify.com/s/files/1/1876/1163/articles/different_dog_breeds_845x450.jpg?v=1549800021" height="200">
+<br>
+<br>
+ <li><strong><a href="https://www.petfinder.com/cat-breeds/"> Cats</li></a><strong>
+
+  <img class="cats" src="https://i.pinimg.com/originals/48/a6/65/48a665dee5e0a630a84980e001ad73f9.jpg" height="200" width="300">
+ 
+   <br>
+
+  <img class="cats" src=
+  "https://www.tuxedo-cat.co.uk/wp-content/uploads/2018/03/a-group-of-cats-AKA-a-clowder.jpg" height="200" width="350">
+  <br>
+<br>
+  <li><strong><a href="http://www.saveabunny.org/adopt"> Bunnies</li></a><strong>
+
+  <img class="bunny" src= 
+  "https://data.whicdn.com/images/329491070/original.jpg" width="300" height="200">
+ <br>
+  
+  <img class="bunny" src= "https://media.istockphoto.com/photos/four-little-rabbits-picture-id1024048734?k=20&m=1024048734&s=612x612&w=0&h=zAR-RswbQACCLozwHqZWv-ScV7Gw2WTIOz7OmOVD0Kg=" height="200" width="400">
+  <br>
+   <center><a href="#Top"> Go back to the top </a> <br>
+</div >
+      
+    <script src="script.js"></script>
   </body>
 </html>
