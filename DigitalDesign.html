@@ -12,20 +12,20 @@ body, html {
 }
 
 /* Container for the entire gallery and positioning */
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center vertically */
-  align-items: center; /* Center horizontally */
-  height: 100vh; /* Take full viewport height */
-}
+.gallery-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 70vh; /* Take up 70% of the viewport height */
+    margin-top: 30px; /* Add some space between the title and gallery */
+  }
 
 /* Slideshow container */
 .slideshow-container {
-  position: relative;
-  max-width: 1000px;
-  width: 100%; /* Allow it to scale down on smaller screens */
-}
+    position: relative;
+    max-width: 1000px;
+    width: 100%; /* Allow it to scale down on smaller screens */
+  }
 
 .mySlides {
   display: none;
@@ -143,10 +143,17 @@ img {
      <h1 class="display-2"> Digital Design Page </h1>
       </center>
 	<div class="container">
-		<Br>
+	</div>
+	</center>
+
 		
 <!---------------GALLERY-------------->
+  <div class="gallery-container">
   <div class="slideshow-container">
+ <!-- Slideshow content remains the same -->
+  </div>
+  <!-- Dot navigation container remains the same -->
+</div>
 
     <div class="mySlides fade">
       <div class="numbertext">1 / 4</div>
@@ -195,10 +202,14 @@ img {
 		
 
 <!----------SCRIPT OF GALLERY-------->
-<!----------SCRIPT OF GALLERY-------->
 <script>
 let slideIndex = 1;
 showSlides(slideIndex);
+
+// Auto-rotate the slides every 3 seconds
+setInterval(() => {
+  plusSlides(1);
+}, 3000);
 
 function plusSlides(n) {
   showSlides(slideIndex += n);
@@ -215,14 +226,15 @@ function showSlides(n) {
   if (n > slides.length) { slideIndex = 1; }
   if (n < 1) { slideIndex = slides.length; }
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+    slides[i].style.display = "none";  // Hide all slides
   }
   for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+    dots[i].className = dots[i].className.replace(" active", "");  // Remove active class
   }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
+  slides[slideIndex - 1].style.display = "block";  // Show the current slide
+  dots[slideIndex - 1].className += " active";  // Activate the corresponding dot
 }
+
 </script>
 </body>
 </html>
