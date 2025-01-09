@@ -196,7 +196,7 @@ img {
 	<br><br>  
 	<h1>HTML Labs:</h1>
 	<br>
-	<h1> CSS Labs:</h1>
+	<h1> CSS Labs:hi</h1>
 	
 		<body style= "background-color: bisque;" ></body>
 
@@ -204,6 +204,11 @@ img {
 <script>
 let slideIndex = 1;
 showSlides(slideIndex);
+
+// Auto-rotate the slides every 3 seconds
+setInterval(() => {
+  plusSlides(1);
+}, 3000);
 
 function plusSlides(n) {
   showSlides(slideIndex += n);
@@ -220,13 +225,13 @@ function showSlides(n) {
   if (n > slides.length) { slideIndex = 1; }
   if (n < 1) { slideIndex = slides.length; }
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+    slides[i].style.display = "none";  // Hide all slides
   }
   for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+    dots[i].className = dots[i].className.replace(" active", "");  // Remove active class
   }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
+  slides[slideIndex - 1].style.display = "block";  // Show the current slide
+  dots[slideIndex - 1].className += " active";  // Activate the corresponding dot
 }
 </script>
 </body>
