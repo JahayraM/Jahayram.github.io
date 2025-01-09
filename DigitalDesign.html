@@ -29,7 +29,7 @@
   }
 
   .mySlides {
-    display: block; /* Keep all slides visible */
+    display: none; /* Hide slides initially */
   }
 
   img {
@@ -201,16 +201,27 @@
       let dots = document.getElementsByClassName("dot");
       if (n > slides.length) { slideIndex = 1; }
       if (n < 1) { slideIndex = slides.length; }
-      // Keep all slides visible
+
+      // Hide all slides
       for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "block";  // Keep all slides visible
+        slides[i].style.display = "none";
       }
-      // Handle active dots
+      // Remove "active" class from all dots
       for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");  // Remove active class
+        dots[i].className = dots[i].className.replace(" active", "");
       }
-      dots[slideIndex - 1].className += " active";  // Activate the corresponding dot
+
+      // Show current slide
+      slides[slideIndex - 1].style.display = "block";
+
+      // Activate current dot
+      dots[slideIndex - 1].className += " active";
     }
+
+    // Set an interval to auto-rotate slides every 3 seconds
+    setInterval(() => {
+      plusSlides(1);
+    }, 3000);
   </script>
 </body>
 </html>
