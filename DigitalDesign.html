@@ -32,6 +32,14 @@
 
   .mySlides {
     display: none;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .mySlides.active {
+    display: block;
+    opacity: 1;
   }
 
   img {
@@ -105,14 +113,8 @@
     background-color: #717171;
   }
 
-  /* Animation */
-  .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-
   @keyframes fade {
-    from { opacity: .4; } 
+    from { opacity: 0; }
     to { opacity: 1; }
   }
 
@@ -126,6 +128,7 @@
 </head>
 
 <body>
+ <body style= "background-color: bisque;" >
   <!-- NAVBAR CODE -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#FF5167">
@@ -153,28 +156,28 @@
   <div class="container">
     <div class="slideshow-container">
       <!-- Slide 1 -->
-      <div class="mySlides fade">
+      <div class="mySlides active">
         <div class="numbertext">1 / 4</div>
         <img src="Screen Shot 2021-11-22 at 9.31.28 AM.png" alt="Mandalas, Image 1">
         <div class="text">Caption Text</div>
       </div>
 
       <!-- Slide 2 -->
-      <div class="mySlides fade">
+      <div class="mySlides">
         <div class="numbertext">2 / 4</div>
         <img src="https://art.pixilart.com/cc4b8c3dfe3e25d.png" alt="Pixel landscape, Image 2">
         <div class="text">Caption Two</div>
       </div>
 
       <!-- Slide 3 -->
-      <div class="mySlides fade">
+      <div class="mySlides">
         <div class="numbertext">3 / 4</div>
         <img src="ASSIGNMENT FILTERS-JM.png" alt="Pop art, Image 3">
         <div class="text">Caption Three</div>
       </div>
 
       <!-- Slide 4 -->
-      <div class="mySlides fade">
+      <div class="mySlides">
         <div class="numbertext">4 / 4</div>
         <img src="jm (2).png" alt="Self portrait, Image 4">
         <div class="text">Caption Four</div>
@@ -213,14 +216,17 @@
       let dots = document.getElementsByClassName("dot");
       if (n > slides.length) { slideIndex = 1; }
       if (n < 1) { slideIndex = slides.length; }
+      
       for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
+        slides[i].classList.remove("active"); // Hide all slides
       }
+      
       for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
       }
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
+      
+      slides[slideIndex - 1].classList.add("active"); // Show current slide
+      dots[slideIndex - 1].className += " active"; // Highlight the current dot
     }
   </script>
 </body>
