@@ -3,6 +3,133 @@
 <head>
 <meta charset="utf-8">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<style>
+  * { box-sizing: border-box; }
+
+  body, html {
+    font-family: Verdana, sans-serif;
+    margin: 0;
+    height: 100%;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  /* Slideshow container */
+  .slideshow-container {
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+    height: 600px; /* Fixed height for consistency */
+    margin-bottom: 20px;
+  }
+
+  .mySlides {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Make sure it takes the full container height */
+    transition: opacity 1s ease-in-out;
+  }
+
+  .mySlides.active {
+    display: block;
+    opacity: 1;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio, fill the container */
+    vertical-align: middle;
+  }
+
+  /* Navigation arrows */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%; /* Vertically center the arrows */
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 100; /* Ensure arrows are above the images */
+  }
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Number of slides */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  /* Dots container */
+  .dot-container {
+    text-align: center;
+    margin-top: 20px;
+    z-index: 10;
+  }
+
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+
+  @keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @media only screen and (max-width: 300px) {
+    .prev, .next, .text {
+      font-size: 11px;
+    }
+  }
+</style>
 </head>
 	
 <body>
@@ -32,5 +159,92 @@
 <body style= "background-color: bisque;" ></body>
 		 <!-----------------start------------>
 
+  <!-- GALLERY SECTION -->
+  <div class="container">
+    <div class="slideshow-container">
+      <!-- Slide 1 -->
+      <div class="mySlides active">
+        <div class="numbertext">1 / 4</div>
+        <img src="Screen Shot 2021-11-22 at 9.31.28 AM.png" alt="Mandalas, Image 1">
+        <div class="text">Caption Text</div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="mySlides">
+        <div class="numbertext">2 / 4</div>
+        <img src="https://art.pixilart.com/cc4b8c3dfe3e25d.png" alt="Pixel landscape, Image 2">
+        <div class="text">Caption Two</div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="mySlides">
+        <div class="numbertext">3 / 4</div>
+        <img src="ASSIGNMENT FILTERS-JM.png" alt="Pop art, Image 3">
+        <div class="text">Caption Three</div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="mySlides">
+        <div class="numbertext">4 / 4</div>
+        <img src="jm (2).png" alt="Self portrait, Image 4">
+        <div class="text">Caption Four</div>
+      </div>
+
+      <!-- Navigation arrows -->
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+
+    <!-- Dots container -->
+    <div class="dot-container">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+      <span class="dot" onclick="currentSlide(4)"></span> 
+    </div>
+  </div>
+<br>
+  <h2>HTML also known as HyperText Markup Language</h2>
+<p>HTML is ike the skeleton of a webpage. It’s a language used to create and structure content on a web, like text, images, and links. 
+ HTML tells the browser what to display (like paragraphs, headings, images, etc.). It uses "tags" like h1, p, and img (<>) to define different parts of the page and struture.</p>
+  <h2>CSS also known as Cascading Style Sheets</h2>
+  <p>CSS is another language used to style and change the appearance of a webpage. It's like the skin of the skeleton and tells the browser how the content should look (like what colors, fonts, layout, etc. to use).
+Makes a webpage look good and organized just like mine!</p>
+  <br>
+  <center><img src= "https://d2dkqamqz2k831.cloudfront.net/posts/338-1733217432633.jpg" alt="html,css,java image" style="width:auto;height:350px;"></center>
+  <br>
+  <!-- SCRIPT -->
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+
+      if (n > slides.length) { slideIndex = 1; }
+      if (n < 1) { slideIndex = slides.length; }
+
+      for (i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active"); // Hide all slides
+      }
+
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      slides[slideIndex - 1].classList.add("active"); // Show current slide
+      dots[slideIndex - 1].className += " active"; // Highlight dot
+    }
+  </script>
 </body>
 </html>
