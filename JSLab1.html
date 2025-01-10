@@ -16,19 +16,22 @@
 	<h1> JavaScript Innertext</h1>
 
 <!-- Extend the Madlib so that it has at least 8 different words-->
-<center><p> One day, while the sun descended beyond the horizon, the Sun noticed something unusual—a little <span id = "name1">____</span> named <span id = "name2"> ____</span>, was at the edge of a mountain.
+<center>
+    <p>One day, while the sun descended beyond the horizon, the Sun noticed something unusual—a little <span id="name1">____</span> named <span id="name2">____</span>, was at the edge of a mountain. 
 
-Curious, the Sun approached and asked. "Why are you here?" in a soft voice.
+    Curious, the Sun approached and asked, "Why are you here?" in a soft voice. 
 
-<span id = "name2"></span> replied "I’ve have been always waiting, wondering if I would be noticed."
+    <span id="name2Repeat"></span> replied, "I’ve always been waiting, wondering if I would be noticed." 
 
-The Sun was surprised and replied. "You’re waiting for me? But I give light to the entire world every day!"
+    The Sun was surprised and replied, "You’re waiting for me? But I give light to the entire world every day!" 
 
-<span id = "name2"></span> replied: "It’s not just light that I seek. It’s your warmth and your kindness."
-The Sun was shooked as he never expected such response and from that day forward, the Sun would rise but this time with a new purpose: like the one it had with the little <span id = "name1"></span>. And in return, the sun has never felt lonely again. 
-	The End<3
-</center>
-</p>
+    <span id="name2Repeat2"></span> replied: "It’s not just light that I seek. It’s your warmth and your kindness."
+
+    The Sun was shocked, as it had never expected such a response. And from that day forward, the Sun would rise, but this time with a new purpose: like the one it had with the little <span id="name1Repeat"></span>. And in return, the Sun has never felt lonely again. 
+
+    The End <3
+    </p>
+  </center>
 	<!-------------- part of script
 document.getElementById("name3").innerHTML = name3;
 document.getElementById("name4").innerHTML = name4;
@@ -43,17 +46,19 @@ document.getElementById("noun1").innerHTML = noun1;
 		------->
 
 	<script> 
+    // Collect input for the Madlib story
+    var name1 = prompt("Give me a type of animal");
+    var name2 = prompt("Give me a name for that animal");
 
-//Put the Madlib JS Code below here. Extend this code so that asks for 8 different inputs and prints them all out
-
-
-var name1 = prompt("Give me a type of animal");
-var name2 = prompt("Give me a name for that animal");
-
-document.getElementById("name1").innerHTML = name1;
-document.getElementById("name2").innerHTML = name2;
-		
-	</script>
+    // Replace the spans with the inputs
+    document.getElementById("name1").innerHTML = name1;
+    document.getElementById("name2").innerHTML = name2;
+    
+    // Repeat the name2 value in other parts of the story
+    document.getElementById("name2Repeat").innerHTML = name2;
+    document.getElementById("name2Repeat2").innerHTML = name2;
+    document.getElementById("name1Repeat").innerHTML = name1;
+  </script>
 
 
 </body>
