@@ -3,6 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Untitled Document</title>
+
+<style>
+        /* Style for the button */
+        #scrollUpBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none; /* Hidden by default */
+        }
+    </style>
 </head>
 
 <body>
@@ -34,7 +51,7 @@
 </div>
 
   <h2> Heading... </h2>
-<p>These images show what I like and represents a little bit of me. </p>
+<p>Overall, these images show what I like and represents a little bit of me. </p>
 
 <p><a
 href="https://www.youtube.com/watch?v=esS7kAjeyxg">How incredible the Manchester United Women's team is! </a></p>
@@ -48,11 +65,29 @@ href="https://www.youtube.com/watch?v=FVjJuetTeHI">How amazing are the yankees!<
 <img
 src="https://cdn10.bigcommerce.com/s-8c7a6u/products/351372/images/956741/672090940056__36228.1447172120.1280.1280.jpg?c=2" alt="yankees" width="300" height="300">
 <img
-src="https://thumbor.forbes.com/thumbor/fit-in/0x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fi.forbesimg.com%2Fmedia%2Flists%2Fteams%2Fmanchester-united_416x416.jpg"alt="Manchester"width="325" height="325">
+src="https://thumbor.forbes.com/thumbor/fit-in/0x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fi.forbesimg.com%2Fmedia%2Flists%2Fteams%2Fmanchester-united_416x416.jpg"alt="Manchester"width="300" height="300">
 <img
-   src="https://www.cawleypt.net/wp-content/uploads/2017/08/Family-Silhouette-3-300x200.jpg" alt="Family">
+   src="https://www.cawleypt.net/wp-content/uploads/2017/08/Family-Silhouette-3-300x200.jpg" alt="Family" width="300" height="300">
 </center>
+<br>
+		<!-------Scroll Up Button---------->
+<button id="scrollUpBtn" onclick="scrollToTop()">⬆ Scroll to Top</button>
 
+<script>
+    // Show the button when scrolling down
+    window.onscroll = function() {
+        let scrollBtn = document.getElementById("scrollUpBtn");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollBtn.style.display = "block";
+        } else {
+            scrollBtn.style.display = "none";
+        }
+    };
 
+    // Function to scroll back to the top smoothly
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
 </body>
 </html>
