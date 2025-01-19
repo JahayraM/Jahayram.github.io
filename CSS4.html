@@ -5,34 +5,47 @@
 body {
   background-image: url("https://wallpaperaccess.com/full/187161.jpg");
   background-color: #cccccc;
+  margin: 0; /* Removes default margins */
+  height: 100vh; /* Makes the body height cover the entire viewport */
+  display: flex;
+  justify-content: center; /* Centers the content horizontally */
+  align-items: center;    /* Centers the content vertically */
 }
-body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center; /* Centers horizontally */
-            align-items: center;    /* Centers vertically */
-            background-color: #f0f0f0; /* Optional: just for contrast */
-        }
+
+nav {
+  position: absolute; /* Allows positioning relative to the viewport */
+  top: 10px; /* Distance from the top of the page */
+  left: 10px; /* Distance from the left of the page */
+}
+
+nav a {
+  text-decoration: none; /* Removes the underline from the link */
+  color: white; /* Link color */
+  padding: 8px 12px; /* Adds padding inside the button */
+  border-radius: 5px; /* Rounds the corners */
+  font-family: Arial, sans-serif; /* Sets a clean font */
+  font-size: 14px; /* Sets font size */
+}
+
+nav a:hover {
+  background-color: #444; /* Changes background color on hover */
+}
 
 .centered-text {
-            text-align: center;
-            font-size: 24px;
-            color: #333;
-        }
-  
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
 </style>
 </head>
 <body>
 <nav>
-<a href = "DigitalDesign.html">Go Back</a><br>
+  <a href="DigitalDesign.html">Go Back</a>
 </nav>
-  
-  <div class="centered-text">
-        This is a image background:
-  </div>
-  
+
+<div class="centered-text">
+  This is an image background:
+</div>
+
 </body>
 </html>
-
-
